@@ -1,0 +1,135 @@
+1) le code ne correspond pas a ce que l'on attend en tant q'utilisateur mais le compilateur ne remarque
+pas d'erreur car il y en a pas il a tout simplement fait une affectation a la place de de l'égalité
+
+2)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int rep;
+    printf("entrer un nombre: \n");
+    scanf("%d \n", &rep);
+    if (rep % 3 == 0) {
+        printf("%d \n", rep);
+    } else if (rep % 3 == 1) {
+        printf("%d \n", rep - 1);
+    } else {
+        printf("%d \n", rep + 1);
+    }
+    return EXIT_SUCCESS;
+}
+
+3)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    float reel1, reel2;
+    printf("entrer un nombre \n");
+    scanf("%f", &reel1);
+    printf("entrer un nombre \n");
+    scanf("%f", &reel2);
+    if (reel1 > 0 && reel2 > 0) {
+        printf("+ \n");
+    } else {
+        printf("- \n");
+    }
+    return EXIT_SUCCESS;
+}
+
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int entier1, entier2, entier3;
+    printf("entrer un nombre \n");
+    scanf("%d", &entier1);
+    printf("entrer un nombre \n");
+    scanf("%d", &entier2);
+    printf("entrer un nombre \n");
+    scanf("%d", &entier3);
+    if (entier1 >= entier2 >= entier3) {
+        printf("%d %d %d \n", entier1, entier2, entier3);
+    } else  if (entier1 >= entier3 >= entier2){
+        printf("%d %d %d \n", entier1, entier3, entier2);
+    } else if (entier2 >= entier1 >= entier3) {
+        printf("%d %d %d \n", entier2, entier1, entier3);
+    } else if (entier2 >= entier3 >= entier1) {
+        printf("%d %d %d \n", entier2, entier3, entier1);
+    }  else if (entier3 >= entier2 >= entier1) {
+        printf("%d %d %d \n", entier3, entier2, entier1);
+    } else {
+        printf("%d %d %d \n", entier3, entier1, entier2);
+    }
+    return EXIT_SUCCESS;
+}
+il faut 6 comparaisons
+voici le programme qui execute au maximum 3 comparaisons:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int entier1, entier2, entier3;
+    printf("entrer un nombre \n");
+    scanf("%d", &entier1);
+    printf("entrer un nombre \n");
+    scanf("%d", &entier2);
+    printf("entrer un nombre \n");
+    scanf("%d", &entier3);
+    if (entier1 >= entier2 && entier1 >= entier3) {
+        if (entier2 >= entier3) {
+            printf("%d %d %d \n", entier1, entier2, entier3);
+        } else {
+            printf("%d %d %d \n", entier1, entier3, entier2);
+        }
+    } else if (entier2 >= entier1 && entier2 >= entier3) {
+        if (entier1 >= entier3) {
+            printf("%d %d %d \n", entier2, entier1, entier3);
+        } else {
+            printf("%d %d %d \n", entier2, entier3, entier1);
+        }
+   } else {
+        if (entier1 >= entier2) {
+            printf("%d %d %d \n", entier3, entier1, entier2);
+        } else {
+            printf("%d %d %d \n", entier3, entier2, entier1);
+        }
+   }
+    return EXIT_SUCCESS;
+}
+
+5) 
+version avec condition:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int annee;
+    printf("entrer une année \n");
+    scanf("%d", &annee);
+    if (annee % 400 == 0) {
+        printf("%d est une année bissextile \n.", annee);
+        return EXIT_SUCCESS;
+    } else if (annee % 4 == 0) {
+        if (annee % 100 != 0) {
+            printf("%d est une année bissextile. \n", annee);
+            return EXIT_SUCCESS;
+        }
+    }
+    printf("%d n'est pas une année bissextile. \n", annee);
+    return EXIT_SUCCESS;
+}
+
+version avec logique:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int annee;
+    printf("entrer une année \n");
+    scanf("%d", &annee);
+    ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) ? printf("%d est une année bissextile. \n", annee) : printf("%d n'est pas une année bissextile. \n", annee);
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,70 @@
+1)
+int main(void) {
+  printf("%.12f\n", 12345.678910111213);
+  return EXIT_SUCCESS;
+}
+
+2)
+int main(void) {
+  printf("%f\n", 5.0+2.5);
+  printf("%f\n", 5.0-2.5);
+  printf("%f\n", 5.0*2.5);
+  printf("%f\n", 5.0/2.5);
+  printf("%f\n", 5.0%2.5);
+  return EXIT_SUCCESS;
+}
+l'erreur vient du modulos
+
+3)
+c'est lorque que le nombre est mahtématiquement incorrect
+on y affecte des veleurs tesl que inf, -inf, NaN
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  double reel;
+  int i = 0;
+  char caractere;
+  printf("entrer un nombre R \n");
+  scanf("%lf", &reel);
+  printf("%e \n", reel);
+  printf("entrer un caratere \n");
+  scanf("%c", &caractere);
+  for (i; i < 5; i++) {
+    printf("%c \n", caractere);
+  }
+  return EXIT_SUCCESS;
+}
+
+5)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  float rep;
+  int i = 1;
+  printf("enter la somme d'argent(s): \n");
+  scanf("%f", &rep);
+  for (i; i <8; i++) {
+     rep *= 1.04;
+     printf("vous gagnerez %.2f euros, au bout de %d ans. \n", rep, i);
+  }
+}
+
+6)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  float res;
+  int i = 0;
+  for (i; i <5; i++) {
+    float rep;
+    printf("entrer un reels R \n");
+    scanf("%f", &rep);
+    res += rep;
+  }
+  printf("le résultat est %.2f \n", res);
+}

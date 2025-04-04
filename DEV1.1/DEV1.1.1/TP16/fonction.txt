@@ -1,0 +1,191 @@
+1)
+#include<stdio.h>
+#include<stdlib.h>
+
+void triangle(int reponse2) {
+  int i, j, elt = 1;
+  for(i = 1; i <= reponse2; i++) {
+    for(j = 1; j <= elt; j++) {
+      printf("*");
+    }
+    elt += 2;
+    printf("\n");
+  }
+}
+
+void carre(int reponse2){
+  int i, j;
+  for(i = 0; i < reponse2; i++) {
+    for(j = 0; j < reponse2; j++) {
+      if (j == 0  || i == 0 || i == reponse2 - 1 || j == reponse2 - 1) {
+        printf("* ");
+      } else {
+        printf("  ");
+      }
+    }
+    printf("\n");
+  }
+}
+
+char menu(char reponse) {
+  printf("-------------------- \n");
+  printf("    t) Triangle     \n");
+  printf("    c) Carré        \n");
+  printf("    q) Quitter     \n");
+  printf("votre choix ? ");
+  scanf("%c", &reponse);
+  printf("\n");
+  return reponse;
+}
+
+int main(void) {
+  char rep1;
+  int rep2;
+  while(rep1 != 'q') {
+    rep1 = menu(rep1);
+    if (rep1 == 'q') {
+      printf("au revoir ... \n"); 
+      return EXIT_SUCCESS;
+    } 
+    printf("hauteur ? ");
+    scanf("%d", &rep2);
+    if (rep1 == 't') {
+      triangle(rep2);
+    } else if (rep1 == 'c') {
+      carre(rep2);
+     }
+  }
+  printf("au revoir ... \n");
+  return EXIT_SUCCESS;
+}
+
+2)
+#include <stdio.h>
+#include <stdlib.h>
+
+signed int aleatoire(void) {
+  return (rand() % 99) - 51;
+}
+
+signed int remplir_tab(signed int tableau[]) {
+  int i;
+  for(i = 0; i < 10; i++) {
+    tableau[i] = aleatoire();
+  }
+}
+
+signed int inverse_tab(signed int tableau[], signed int tableau2[]) {
+  char j = 9, i;
+  for(i = 0; i < 10; i++) {
+    tableau2[i] = tableau[j];
+    j--;
+  }
+}
+
+void dessine_tab(int tableau[]) {
+  char i;
+  printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+  printf("|\n");
+  for(i = 0; i < 10; i++) {
+    printf("| %3d ", tableau[i]);
+  }
+
+  printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+  printf("\n");
+}
+
+int main(void) {
+  signed int tab[10], tab2[10];
+  remplir_tab(tab);
+  inverse_tab(tab, tab2);
+  dessine_tab(tab);
+  dessine_tab(tab2);
+  return EXIT_SUCCESS;
+}
+
+3)
+#include<stdio.h>
+#include<stdlib.h>
+
+void zero(double *a) {
+  *a = 0.0;
+}
+
+int main(void) {
+  double x=37.5;
+  printf("avant : %f\n", x);
+  zero(&x);
+  printf("après : %f\n", x);
+  return EXIT_SUCCESS;
+}
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+void inverse_var(int *a, int *b) {
+  int temp;
+  temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+int main(void) {
+  int var1 = 5, var2 = 10;
+  printf("avant : A: %d | B: %d \n", var1, var2);
+  inverse_var(&var1, &var2);
+  printf("après : A: %d | b: %d \n", var1, var2);
+  return EXIT_SUCCESS;
+}
+
+5)
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    long produit = 1;
+    char *endptr;
+    int i;
+    int valid_args = 0;
+
+    if (argc < 2) {
+        fprintf(stderr, "Utilisation : %s <entier 1> <entier 2> ...\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+    for (i = 1; i < argc; i++) {
+        errno = 0; /* Réinitialiser errno avant chaque conversion */
+        long val = strtol(argv[i], &endptr, 10);
+
+        /* Vérifier si la chaîne ne contient aucun caractère convertible en entier */
+        if (endptr == argv[i]) {
+            fprintf(stderr, "Argument ignoré : \"%s\" n'est pas un nombre\n", argv[i]);
+            continue;
+        }
+
+        /* Vérifier s'il reste des caractères non numériques après la conversion */
+        if (*endptr != '\0') {
+            fprintf(stderr, "Argument ignoré : \"%s\" contient des caractères non numériques\n", argv[i]);
+            continue;
+        }
+
+        /* Vérifier si la valeur est hors des limites de 'long' */
+        if (errno == ERANGE) {
+            fprintf(stderr, "Argument ignoré : \"%s\" est hors des limites de 'long'\n", argv[i]);
+            continue;
+        }
+
+        produit *= val; /* Calculer le produit pour chaque entier valide */
+        valid_args++; /* Compter les arguments valides */
+    }
+
+    /* Si aucun entier valide n'est fourni */
+    if (valid_args == 0) {
+        fprintf(stderr, "Aucun entier valide fourni.\n");
+        return EXIT_FAILURE;
+    }
+
+    printf("Le produit des entiers valides est : %ld\n", produit);
+    return EXIT_SUCCESS;
+}

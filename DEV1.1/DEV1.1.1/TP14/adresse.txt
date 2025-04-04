@@ -1,0 +1,49 @@
+1)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  float f;
+  double d;
+  long double l;
+  char c;
+  short int s;
+  int i;
+  unsigned long int u;
+  printf("float: %p\n", (void*)&f);
+  printf("double: %p\n", (void*) &d);
+  printf("long double: %p\n",(void*)&l);
+  printf("char: %p\n", (void*)&c);
+  printf("short int: %p\n", (void*)&s);
+  printf("int: %p\n", (void*)&i);
+  printf("unsigned long int: %p\n",(void*)&u);
+  return EXIT_SUCCESS;
+}
+
+il saute de 8 octets en 8 octest pour être plus rapide c'est une contrainte meteriel
+
+2)
+hypothèse: il affiche l'alphabet
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  char min, maj;
+  char *p = NULL;
+  for (min = 'a', maj = 'A'; maj <= 'Z'; min++, maj++) {
+    p = (p == &min) ? &maj : &min;
+    putchar(*p);
+  }
+  putchar('\n');
+  return EXIT_SUCCESS;
+}
+
+réponse: affiche l'alphabet en alternent entre minuscule et majuscule
+
+3)
+si le temp en seconde est impaire le programme affiche 31 sinon 59
+on apelle cela mort-vivant car la variable n'existe pkus mais le pointeur est encore vivant
+
+4)
+

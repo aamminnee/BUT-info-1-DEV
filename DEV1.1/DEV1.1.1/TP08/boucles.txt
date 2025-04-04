@@ -1,0 +1,137 @@
+1)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  int reponse = rand() % 101;
+  int usr;
+  int i = 0;
+  printf("entre un nombre entre 0 et 100 \n");
+  scanf("%d", &usr);
+  while(i < 5 && usr != reponse) {
+    (usr > reponse) ? printf("- \n") : printf("+ \n");
+    i++;
+    printf("entre un nombre entre 0 et 100 \n");
+    scanf("%d", &usr);
+  }
+  if (usr != reponse) {
+        printf("tu as dépassé le nombre d'eesai \n");
+        printf("tu as perdu le nombre est %d \n", reponse);
+          return EXIT_SUCCESS;
+  }
+  printf("tu as gagné le nombre est bien %d \n", usr);
+  return EXIT_SUCCESS;
+}
+
+2)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  int usr;
+  int i = 2;
+  printf("entre un nombre\n");
+  scanf("%d", &usr);
+  while(i < usr) {
+    if (usr % i == 0) {
+      printf("%d n'est pas un nombre premier \n", usr);
+      return EXIT_SUCCESS;
+    }
+    i++;
+  }
+  printf("%d est un nombre premier \n", usr);
+  return EXIT_SUCCESS;
+}
+
+3)
+#include<stdio.h>
+#include<stdlib.h>
+#define NBR 25
+
+int main(void) {
+  int i, j, res_temp, k;
+  char barre = '-';
+  for(i = -1; i < NBR + 1; i++) {
+    (i == -1) ? printf(" %c |", 'X') : printf(" %d |", i);
+    for(j = 0; j < NBR + 1; j++) {
+      res_temp = i * j;
+      (i == -1) ?  printf(" %d ", j) : printf(" %d ", res_temp);
+    }
+  printf("\n");
+    for(k = 0; k <= NBR * 2; k++) {
+      printf(" %c ", barre);
+    }
+  printf("\n");
+  }
+  return EXIT_SUCCESS;
+}
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  int n = 2;
+  int rep;
+  int un_2 = 0;
+  int un_1 = 1;
+  int un;
+  printf("entrer un nombre: \n");
+  scanf("%d", &rep);
+  for (n; n <= rep; n++) {
+    un = un_1 + un_2;
+    un_2 = un_1;
+    un_1 = un;
+  }
+  printf("%d\n", un);
+  return EXIT_SUCCESS;
+}
+
+5)
+#include<stdio.h>
+#include<stdlib.h>
+
+
+int main(void) {
+  int rep, i, j, k, l;
+  printf("entre un nombre: \n");
+  scanf("%d", &rep);
+  for(i = 0; i <= rep; i++) {
+    for(j = 0; j <= rep - i; j++ ) {
+      for(k = 0; k <= rep - j; k++) {
+        for(l = 0; l <= rep - k; l++) {
+          if (i + j + k + l == rep) {
+             printf("%d = %d + %d + %d + %d \n", rep, i, j, k, l);
+          }
+        }
+      }
+    }
+  }
+  return EXIT_SUCCESS;
+}
+
+6)
+#include<stdio.h>
+#include<stdlib.h>
+
+
+int main(void) {
+  int rep, rep_temp;
+  int i = 2;
+  printf("entrer un entier naturel non nul: \n");
+  scanf("%d", &rep);
+  rep_temp = rep;
+  printf("%d = ", rep);
+  while(rep_temp !=  1) {
+    if ((rep_temp % i) == 0) {
+      rep_temp = rep_temp / i;
+      printf(" %d *", i);
+    } else {
+      i++;
+    }
+  }
+  printf("\b \n");
+  return EXIT_SUCCESS;
+}
+
+

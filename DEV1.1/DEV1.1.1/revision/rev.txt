@@ -1,0 +1,126 @@
+Controle machine n1:
+
+1)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  printf("{o,o}\n");
+  printf("(__(\\\n");
+  printf("-\"-\"-\n");
+  return EXIT_SUCCESS;
+}
+
+2)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  printf("%d \n", 58);
+  printf("%x\n", 0x58);
+  return EXIT_SUCCESS;
+}
+
+3)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  float taille;
+  int pied, pouce;
+  printf("entrer votre taille : ");
+  scanf("%f", &taille);
+  taille = ((int)(taille / 0.0256f));
+  pouce = ((int)taille) % 12;
+  pied = ((int)taille) / 12;
+  if(pied > 0) {
+    if(pied == 1) {
+      if(pouce > 0) {
+        if(pouce == 1) {
+          printf("1 pied et 1 pouce \n");
+        } else {
+          printf("1 pied et %d pouces \n", pouce);
+        }
+      } else {
+        printf("1 pied \n");
+      }
+    } else {
+      if(pouce > 0) {
+        if(pouce == 1) {
+          printf("%d pieds et 1 pouce \n", pied);
+        } else {
+          printf("%d pieds et %d pouces \n", pied, pouce);
+        }
+      } else {
+        printf("%d pieds \n", pied);
+      }
+    }
+  } else {
+    if(pouce > 0) {
+      if(pouce == 1) {
+        printf("1 pouce \n");
+      } else {
+        printf("%d pouce \n", pouce);
+      }
+    } else {
+      printf("tu n'existe pas (à l'échelle humaine) ! \n");
+    }
+  }
+  return EXIT_SUCCESS;
+}
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  char lettre, alphabet;
+  int i;
+  printf("entrer votre lettre : ");
+  scanf("%c", &lettre);
+  for(alphabet = 'a'; alphabet < lettre; alphabet++) {
+    printf("%c", alphabet);
+  }
+  for(alphabet = lettre; alphabet == lettre; alphabet++) {
+    printf("[%c]", lettre);
+  }
+  for(alphabet = (lettre + 1); alphabet <= 'z' ; alphabet++) {
+    printf("%c", alphabet);
+  }
+  printf("\n");
+  return EXIT_SUCCESS;
+
+5) flm
+
+controle machine n2:
+
+1) deja fait
+
+2) c'est la même que l'autre
+
+3) a faire...
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+  char lettre;
+  int difference, i;
+  printf("entrer une lettre : ");
+  scanf("%c", &lettre);
+  difference = (int)(lettre - 'a');
+  for(i = 0; i < (26 - difference); i++) {
+    printf("%c", lettre);
+    lettre++;
+  }
+  lettre = 'a';
+  for(i = 0; i < difference; i++) {
+    printf("%c", lettre);
+    lettre++;
+  }
+  printf("\n");
+  return EXIT_SUCCESS;
+}
+
+5) flm (et c'est la même)

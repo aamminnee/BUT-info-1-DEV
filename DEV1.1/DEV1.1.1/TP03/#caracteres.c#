@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+/*
+2)
+int main(void) {
+    printf("%c \n", '6' + 1);
+    return EXIT_SUCCESS;
+}
+
+3)
+int main(void) {
+    char a = 'c';
+    printf("%c\n", (a&0xdf)|0x20); // calculs logique
+    printf("%c\n",a + 'A' - 'a'); // calculs arithmétique
+    return EXIT_SUCCESS;
+}
+*/

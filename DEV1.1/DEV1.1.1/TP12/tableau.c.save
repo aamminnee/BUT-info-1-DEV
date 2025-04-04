@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define C 4
+#define SIZE 10
+
+int main(void) {
+    signed int tab[SIZE], i, temp;
+    srand(time(NULL));
+    printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    for(i = 0; i < SIZE; i++) {
+        tab[i] = (rand() % 99) - 51;
+        printf("| %3d ", tab[i]);
+    }
+    printf("|\n");
+    printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n\n");
+
+    for (i = 0; i < SIZE - C; i++) {
+        int j = (i + C);
+        temp = tab[i];
+        tab[i] = tab[j];
+        tab[j] = temp;
+        printf("Swapped tab[%d] with tab[%d] (temp: %d)\n", i, j, temp);
+    }
+
+    printf("\n+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    for(i = 0; i < SIZE; i++) {
+        printf("| %3d ", tab[i]);
+    }
+    printf("|\n");
+    printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+
+    return EXIT_SUCCESS;
+}
+

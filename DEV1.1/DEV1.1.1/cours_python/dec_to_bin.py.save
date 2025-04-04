@@ -1,0 +1,30 @@
+def dec_to_bin(nombre):
+  reste = ""
+  while nombre > 0:
+    n = nombre // 2
+    r = nombre % 2
+    reste = str(r) + reste
+  return reste
+
+print(dec_to_bin(5))
+
+
+def bin_to_dec(nombre):
+  resultat = 0
+  for i in range((len(nombre) - 1), 0, -1):
+    resultat += nombre[i] * (2 ** i)
+  return resultat 
+
+print(bin_to_dec("101"))
+
+
+def dec_to_bin(nombre):
+  nombre = "0123456789ABCDEF"
+  reste = ""
+  while nombre > 0:
+    n = nombre // 16
+    r = nombre % 16
+    reste = str(nombre[r]) + reste
+  return reste
+
+print(dec_to_bin(5))

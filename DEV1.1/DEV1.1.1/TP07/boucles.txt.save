@@ -1,0 +1,80 @@
+1)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int rep1, rep2;
+    int i = 0;
+    printf("entrer un entier: \n");
+    scanf("%d", &rep1);
+    printf("entrer un entier: \n");
+    scanf("%d", &rep2);
+    if (rep1 < rep2) {
+        for(rep1; rep1 < rep2; rep1++) {
+            printf("%d \n",rep1);
+        }
+    } else {
+        for(rep2; rep2 < rep1; rep2++) {
+            printf("%d \n", rep2);
+        }
+    }
+}
+
+2)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    float rep = 1001.0;
+    int i = 1;
+    while(rep >= 1000 && rep <= 50000) {
+        printf("enter la somme d'argent non compris entre 1000 et 50000 euros: \n");
+        scanf("%f", &rep);
+    }
+    for (i; i <8; i++) {
+        rep *= 1.04;
+        printf("vous gagnerez %.2f euros, au bout de %d ans. \n", rep, i);
+    }
+}
+
+3)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int rep;
+    int i = 0;
+    int temp;
+    printf("enter un entier: \n");
+    scanf("%d", &rep);
+    temp = rep;
+    for (i; i < 11; i++) {
+        rep = temp * i;
+        printf("%d * %d = %d\n", temp, i, rep);
+    }
+    return EXIT_SUCCESS;
+}
+
+4)
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(void) {
+    int rep;
+    int quotient;
+    int paquet = 0;
+    int reste;
+    printf("enter un entier N+: \n");
+    scanf("%d", &rep);
+    printf("entrer un entier N*+: \n");
+    scanf("%d", &quotient);
+    reste = rep;
+    while(reste >= quotient) {
+        reste -= quotient;
+        paquet++;
+    }
+    printf("%d --> %d * %d + %d \n", rep, paquet, quotient, reste);
+}
+
+5)
+

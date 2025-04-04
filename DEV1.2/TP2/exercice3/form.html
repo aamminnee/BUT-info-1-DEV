@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <header>
+        <meta charset="utf-8">
+        <title>SITE DE AMINE</title>
+    </header>
+    <body>
+        <div>
+            <form method="post" action="https://dwarves.iut-fbleau.fr/requete.php">
+                <label for="sexe">Homme </label><label for="sexe2">ou Femme :</label><br>
+                <input type="radio" id="sexe" name="sexe">
+                <input type="radio" id="sexe2" name="sexe" checked><br>
+                <label for="html">Niveau HTML :</label><br>
+                <input type="range" id="lvl" name="lvl" max="100" value="100"><br>
+                <label>Numéros de téléphone:</label><br>
+                <input type="text" id="num" name="num" required pattern="0[6-7]{1}[0-9]{8}"><br>
+                <input type="submit" id="valider" name="valider"><br>
+            </form>
+        </div>
+    </body>
+</html>

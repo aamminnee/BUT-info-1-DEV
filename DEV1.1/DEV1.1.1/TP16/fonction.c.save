@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+signed int aleatoire(void) {
+  return (rand() % 99) - 51;
+}
+
+signed int remplir_tab(signed int tableau[]) {
+  int i;
+  for(i = 0; i < 10; i++) {
+    tableau[i] = aleatoire();
+  }
+  return tableau[]
+}
+
+signed int inverse_tab(signed int tableau[], signed int tableau2[]) {
+  char j = 9;
+  for(i = 0; i < 10; i++) {
+    tableau2[i] = tableau[j];
+    j--;
+  }
+}
+
+void dessine_tab(int tableau[]) {
+  char i;
+  pr#include <stdio.h>
+#include <stdlib.h>
+
+signed int aleatoire(void) {
+  return (rand() % 99) - 51;
+}
+
+signed int remplir_tab(signed int tableau[]) {
+  int i;
+  for(i = 0; i < 10; i++) {
+    tableau[i] = aleatoire();
+  }
+}
+
+signed int inverse_tab(signed int tableau[], signed int tableau2[]) {
+  char j = 9;
+  for(i = 0; i < 10; i++) {
+    tableau2[i] = tableau[j];
+    j--;
+  return tableau2;
+  }
+}
+
+void dessine_tab(int tableau[]) {
+    char i;
+    printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    printf("|\n");
+     for(i = 0; i < 10; i++) {
+        printf("| %3d ", tableau[i]);
+    }
+    printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+    printf("\n");
+}
+
+int main(void) {
+  signed int tab[10], tab2[10];
+  tab[] = remplir_tab(tab);
+  tab2[] = inverse_tab(tab, tab2);
+  dessine_tab(tab);
+  dessine_tab(tab2);
+  return EXIT_SUCCESS;
+}intf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+  printf("|\n");
+  for(i = 0; i < 10; i++) {
+    printf("| %3d ", tableau[i]);
+  }
+  printf("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\n");
+  printf("\n");
+}
+
+int main(void) {
+  signed int tab[10], tab2[10];
+  remplir_tab(tab);
+  inverse_tab(tab, tab2);
+  dessine_tab(tab);
+  dessine_tab(tab2);
+  return EXIT_SUCCESS;
+}
+
