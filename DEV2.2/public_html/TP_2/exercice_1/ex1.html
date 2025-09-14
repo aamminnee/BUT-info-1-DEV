@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css">
+		<title>Exercice 1</title>
+
+	</head>
+	<body>
+		<main>
+			<h3> Exercice 1</h3>
+
+			<form  action="ex1.php" method="POST">
+				<fieldset>
+					<legend>Qui êtes-vous ?</legend>
+					<!-- Text input-->
+					<label>Nom
+						<input  name="nom" placeholder="nom"  type="text">
+					</label>
+					<!-- Text input-->
+					<label >Prénom
+						<input  name="prenom" placeholder="prénom" type="text">
+					</label>
+				</fieldset>
+				<!-- Multiple Radios -->
+				<fieldset>
+					<legend>Système d'exploitation préféré</legend>
+					<label>
+						<input name="os"  value="1" checked="checked" type="radio">
+						Linux
+					</label>
+					<label >
+						<input name="os"  value="2" type="radio">
+						Windows
+					</label>
+					<label >
+						<input name="os"  value="3" type="radio">
+					macOS	
+					</label>
+					<label >
+						<input name="os"  value="4" type="radio">
+					Android
+					</label>
+				</fieldset>
+				<!-- Button -->
+				<button type="submit">Envoyer</button>
+			</form>
+		</main>
+	</body>
+</html>

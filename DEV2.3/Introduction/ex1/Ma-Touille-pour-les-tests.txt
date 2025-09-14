@@ -1,0 +1,33 @@
+les differentes type de programmation défensive:
+    -assertion
+    -exeption
+    -condition
+
+condition: 
+ if (valeur == 13) throw new IllegalStateException("Comme disait Sacha Guitry, je ne suis pas superstitieux mais on ne sait jamais.");
+
+exeption:
+          // ici manuellement en regardant le message.
+        try {
+            System.out.println(c13.toString()); // toucher au nbre 13 avec getValeur()
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        
+        try{
+            c9.divise(c3); //division par 0
+            }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+        try{
+            c9.divise(null); //division par null
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+assertion: 
+    assert quantite >= 0 : "quantité négative (" + quantite + ")";
